@@ -4,8 +4,8 @@ class SnakeLadder:
     def __init__(self):
         self.position_player1 = 0
 
-    @staticmethod
-    def roll_dice():
+
+    def roll_dice(self):
         return random.randint(1,6)
 
     def play_turn(self):
@@ -24,6 +24,11 @@ class SnakeLadder:
 
         print(f"Dice rolled: {dice_value}, Option: {option}, New Position: {self.position_player1}")
 
+    def play_game(self):
+        while self.position_player1 < 100:
+            self.play_turn()
+
+
 game = SnakeLadder()
 
-game.play_turn()
+game.play_game()
